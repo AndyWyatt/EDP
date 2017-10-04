@@ -1,0 +1,43 @@
+﻿<Window x:Class="EDP09.TheSimpsons.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EDP09.TheSimpsons"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ListBox>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="70" Source="https://68.media.tumblr.com/avatar_6b43c814534a_128.png" />
+                    <Label VerticalContentAlignment="Bottom" FontSize="24">Bart Simpson</Label>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="70" Source="http://pm1.narvii.com/6165/2068408c78882c61008caed57c0c26f492209ff3_128.jpg" />
+                    <Label VerticalContentAlignment="Bottom" FontSize="24">Lisa Simpson</Label>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="70" Source="https://68.media.tumblr.com/avatar_f970536ea500_128.png" />
+                    <Label VerticalContentAlignment="Bottom" FontSize="24">Maggie Simpson</Label>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="70" Source="https://pbs.twimg.com/profile_images/751481771/marge-simpson-3_reasonably_small.jpg" />
+                    <Label VerticalContentAlignment="Bottom" FontSize="24">Marge Simpson</Label>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="70" Source="https://68.media.tumblr.com/avatar_3a3da22a48b5_128.png" />
+                    <Label VerticalContentAlignment="Bottom" FontSize="24">Homer Simpson</Label>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+    </Grid>
+</Window>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="EDP.EDP13Password.LogIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EDP.EDP13Password"
+        mc:Ignorable="d"
+        Title="LogIn" Height="119.398" Width="300">
+    <Grid Margin="3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="85" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Content="Username"/>
+        <TextBox Name="txtUsername" Text="{Binding Username}" Grid.Column="1" Margin="2" />
+        <Label Grid.Row="1" Content="Password"/>
+        <TextBox Name="txtPassword" Text="{Binding Password}" Grid.Row="1" Margin="2" Grid.Column="1" />
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button Name="butCancel" IsCancel="True" Margin="2" Content="Cancel"/>
+            <Button Name="butOK" IsDefault="True" Margin="2" Content="Ok"/>
+        </StackPanel>
+    </Grid>
+</Window>

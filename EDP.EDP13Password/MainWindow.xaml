@@ -1,0 +1,15 @@
+﻿<Window x:Class="EDP.EDP13Password.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EDP.EDP13Password"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="142.373" Width="320.339">
+    <Grid>
+        <Button x:Name="butEnterPassword" Content="Enter Password" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="109"/>
+        <Button x:Name="butLogin" Content="Login" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="109"/>
+        <Rectangle Name="rctLogin" Fill="Red" HorizontalAlignment="Left" Height="22" Margin="124,37,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+
+    </Grid>
+</Window>

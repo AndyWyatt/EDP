@@ -1,0 +1,16 @@
+﻿<Window x:Class="EDP09.DockPanelExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EDP09.DockPanelExample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="335.169" Width="215.784">
+    <DockPanel>
+        <TextBox DockPanel.Dock="Top" />
+        <Button DockPanel.Dock="Top">Add</Button>
+        <Button DockPanel.Dock="Bottom">Exit</Button>
+        <Button DockPanel.Dock="Bottom">Remove</Button>
+        <ListBox />
+    </DockPanel>
+</Window>
