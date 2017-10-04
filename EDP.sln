@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDP09.ThirdPartyControls", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDP.EDP13Password", "EDP.EDP13Password\EDP.EDP13Password.csproj", "{846906A7-4F26-4666-B650-21EB06E3D991}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDP.EDP13DialCustomControl", "EDP.EDP13DialCustomControl\EDP.EDP13DialCustomControl.csproj", "{D6CB4863-AACF-43F3-947D-9C0E36BFCB0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{846906A7-4F26-4666-B650-21EB06E3D991}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{846906A7-4F26-4666-B650-21EB06E3D991}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{846906A7-4F26-4666-B650-21EB06E3D991}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6CB4863-AACF-43F3-947D-9C0E36BFCB0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6CB4863-AACF-43F3-947D-9C0E36BFCB0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6CB4863-AACF-43F3-947D-9C0E36BFCB0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6CB4863-AACF-43F3-947D-9C0E36BFCB0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
