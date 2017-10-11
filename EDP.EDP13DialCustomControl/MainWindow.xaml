@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <local:Dial Width="250" Height="250" Min="0.0" Max="1.0" Value="0.25" />
+        <local:Dial x:Name="dial1" Width="100" Height="100" Min="0.0" Max="1.0" Value="0.25" Margin="10,10,407,210" />
+        <local:Dial x:Name="dial2" Width="100" Height="100" Min="0.0" Max="1.0" Value="0.1" Margin="215,10,202,210" />
+        <local:Dial x:Name="dial3" Width="100" Height="100" Min="0.0" Max="1.0" Value="0.6" Margin="115,10,302,210" />
+        <Button x:Name="butUp" Content="Up" Width="100" VerticalAlignment="Top" Margin="320,10,97,0" />
+        <Button x:Name="butDown" Content="Down" Width="100" VerticalAlignment="Top" Margin="320,88,97,0" />
+        <local:PasswordIndercatorBox PasswordExpected="letmein"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="10,115,0,0" />
     </Grid>
 </Window>
