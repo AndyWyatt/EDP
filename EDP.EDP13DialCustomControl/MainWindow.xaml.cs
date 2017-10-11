@@ -56,8 +56,6 @@ namespace EDP.EDP13DialCustomControl
             };
 
             DataContext = this;
-
-            Validation.HasErrorProperty
         }
     }
 }
