@@ -7,9 +7,10 @@
         mc:Ignorable="d"
         Title="Add a student..." ResizeMode="NoResize" Height="144.915" Width="300">
     <Window.Resources>
-        <!--<Style TargetType="Label">
+        <Style TargetType="Label">
             <Setter Property="FontWeight" Value="Bold" />
-        </Style>-->
+            <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -23,11 +24,11 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Label>Student Id</Label>
-        <TextBlock Grid.Column="1" Text="{Binding Id}" />
+        <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="{Binding Id}" />
         <Label Grid.Row="1">Forename</Label>
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Forename}" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Forename}" VerticalAlignment="Center" />
         <Label Grid.Row="2">Surname</Label>
-        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Surname}" />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Surname}" VerticalAlignment="Center" />
         <StackPanel Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal">
             <Button Name="butCancel" Margin="3" IsCancel="True">Cancel</Button>
             <Button Name="butOK" Margin="3" IsDefault="True">Ok</Button>

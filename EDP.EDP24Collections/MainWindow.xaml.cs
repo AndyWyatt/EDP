@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +21,27 @@ namespace EDP.EDP24Collections
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<Models.Student> VacinationQueue { get; set; } 
+            = new ObservableCollection<Models.Student>();
+
         public MainWindow()
         {
             InitializeComponent();
 
             butAddStudent.Click += ButAddStudent_Click;
+            butStabStudent.Click += ButStabStudent_Click;
+
+            DataContext = this;
+        }
+
+        private void ButStabStudent_Click(object sender, RoutedEventArgs e)
+        {
+            VacinationQueue.RemoveAt(0);
+
+            if (VacinationQueue.Count == 0)
+            {
+                butStabStudent.IsEnabled = false;
+            }
         }
 
         private void ButAddStudent_Click(object sender, RoutedEventArgs e)
@@ -33,7 +50,9 @@ namespace EDP.EDP24Collections
             StudentAdd dlgStudentAdd = new StudentAdd(newStudent);
             if (dlgStudentAdd.ShowDialog() == true)
             {
-                // Process the adding of the student
+                VacinationQueue.Add(newStudent);
+
+                butStabStudent.IsEnabled = true;
             }
         }
     }

@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="butAddStudent" Content="Add Student" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="butAddStudent" Content="Add Student" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="143"/>
+        <Label Content="Vaccination Queue" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="143"/>
+        <ListBox x:Name="lbVaccinationQueue" ItemsSource="{Binding VacinationQueue}" HorizontalAlignment="Left" Height="183" Margin="10,72,0,0" VerticalAlignment="Top" Width="143"/>
+        <Button x:Name="butStabStudent" IsEnabled="False" Content="Stab Student" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="143"/>
 
     </Grid>
 </Window>
