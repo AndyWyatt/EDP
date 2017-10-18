@@ -35,7 +35,7 @@ namespace EDP25.Bank.WPF
             butEditAccount.Click += ButEditAccount_Click;
             butRemoveAccount.Click += ButRemoveAccount_Click;
 
-            butRemoveAccount.IsEnabled = false;
+            butEditAccount.IsEnabled = butRemoveAccount.IsEnabled = false;
             lbAccounts.SelectionChanged += LbAccounts_SelectionChanged;
 
             Accounts = new ObservableCollection<BO.BankAccount>(DB.BankAccountGetAll());
