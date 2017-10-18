@@ -13,6 +13,8 @@ namespace EDP25.Bank.BO
         public decimal Money { get; protected set; }
         public DateTime CreatedOn { get; protected set; }
 
+        public bool HasOverdraft { get; set; }
+
         protected BankAccount()
         {
 
@@ -36,7 +38,7 @@ namespace EDP25.Bank.BO
 
         public void Withdraw(decimal money)
         {
-            if (money > 0.0m && Money - money >= 0.0m)
+            if (money > 0.0m && (HasOverdraft || Money - money >= 0.0m))
             {
                 Money -= money;
             }

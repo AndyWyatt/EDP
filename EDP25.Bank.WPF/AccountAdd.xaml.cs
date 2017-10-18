@@ -31,6 +31,8 @@ namespace EDP25.Bank.WPF
 
             butCancel.Click += ButCancel_Click;
             butOk.Click += ButOk_Click;
+
+            txtOwnerName.Focus();
         }
 
         private void ButOk_Click(object sender, RoutedEventArgs e)

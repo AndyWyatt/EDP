@@ -23,11 +23,11 @@ namespace EDP25.Bank.WPF
     {
         public ObservableCollection<BO.BankAccount> Accounts { get; set; }
 
+        public static DataLayer.Repository DB { get; set; } = new DataLayer.Repository();
+
         public MainWindow()
         {
             InitializeComponent();
-
-            Accounts = new ObservableCollection<BO.BankAccount>();
 
             DataContext = this;
 
@@ -36,6 +36,8 @@ namespace EDP25.Bank.WPF
 
             butRemoveAccount.IsEnabled = false;
             lbAccounts.SelectionChanged += LbAccounts_SelectionChanged;
+
+            Accounts = new ObservableCollection<BO.BankAccount>(DB.BankAccountGetAll());
         }
 
         private void LbAccounts_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -45,7 +47,12 @@ namespace EDP25.Bank.WPF
 
         private void ButRemoveAccount_Click(object sender, RoutedEventArgs e)
         {
-            Accounts.Remove(lbAccounts.SelectedItem as BO.BankAccount);
+            BO.BankAccount selectedItem = lbAccounts.SelectedItem as BO.BankAccount;
+
+            DB.BankAccountDelete(selectedItem);
+            DB.SaveChanges();
+
+            Accounts.Remove(selectedItem);
         }
 
         private void ButAddAccount_Click(object sender, RoutedEventArgs e)
@@ -56,6 +63,10 @@ namespace EDP25.Bank.WPF
                 BO.BankAccount account = new BO.BankAccount(
                     dlgAccountAdd.BankAccount.OwnerName,
                     dlgAccountAdd.BankAccount.Ballance);
+
+                DB.BankAccountInsert(account);
+                DB.SaveChanges();
+
                 Accounts.Add(account);
             }
         }
