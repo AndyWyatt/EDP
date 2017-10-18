@@ -8,7 +8,8 @@
         Title="MainWindow" Height="358.898" Width="289.195">
     <DockPanel>
         <Button x:Name="butAddAccount" DockPanel.Dock="Top" Content="Add" />
-        <Button x:Name="butRemoveAccount" DockPanel.Dock="Bottom" Content="Remove" />
+        <Button x:Name="butRemoveAccount" Background="Red" DockPanel.Dock="Bottom" Margin="0, 10, 0, 0" Content="Remove" />
+        <Button x:Name="butEditAccount" DockPanel.Dock="Bottom" Content="Edit" />
         <ListBox x:Name="lbAccounts" ItemsSource="{Binding Accounts}" />
     </DockPanel>
 </Window>

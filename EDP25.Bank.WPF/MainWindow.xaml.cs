@@ -32,6 +32,7 @@ namespace EDP25.Bank.WPF
             DataContext = this;
 
             butAddAccount.Click += ButAddAccount_Click;
+            butEditAccount.Click += ButEditAccount_Click;
             butRemoveAccount.Click += ButRemoveAccount_Click;
 
             butRemoveAccount.IsEnabled = false;
@@ -40,9 +41,18 @@ namespace EDP25.Bank.WPF
             Accounts = new ObservableCollection<BO.BankAccount>(DB.BankAccountGetAll());
         }
 
+        private void ButEditAccount_Click(object sender, RoutedEventArgs e)
+        {
+            AccountEdit dlgAccountEdit = new AccountEdit(lbAccounts.SelectedItem as BO.BankAccount);
+            if (dlgAccountEdit.ShowDialog() == true)
+            {
+                DB.SaveChanges();
+            }
+        }
+
         private void LbAccounts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            butRemoveAccount.IsEnabled = lbAccounts.SelectedItem != null;
+            butEditAccount.IsEnabled = butRemoveAccount.IsEnabled = lbAccounts.SelectedItem != null;
         }
 
         private void ButRemoveAccount_Click(object sender, RoutedEventArgs e)
