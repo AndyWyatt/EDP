@@ -5,23 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EDP25.Bank.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="358.898" Width="289.195">
-    <DockPanel>
-        <Button x:Name="butAddAccount" DockPanel.Dock="Top" Content="Add" />
-        <Button x:Name="butRemoveAccount" Background="Red" DockPanel.Dock="Bottom" Margin="0, 10, 0, 0" Content="Remove" />
-        <Button x:Name="butEditAccount" DockPanel.Dock="Bottom" Content="Edit" />
-        <ListBox x:Name="lbAccounts" ItemsSource="{Binding Accounts}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Id}" />
-                        <TextBlock Text=" - " />
-                        <TextBlock Text="{Binding OwnerName}" />
-                        <TextBlock Text=" - " />
-                        <TextBlock Text="{Binding Money}" FontStyle="Italic" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-    </DockPanel>
+        Title="MainWindow" Height="358.898" Width="389.301">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <DockPanel Margin="0,0,3,0">
+            <Label DockPanel.Dock="Top" Content="Accounts:" FontWeight="Bold" />
+            <Button x:Name="butAddAccount" DockPanel.Dock="Top" Content="Add" />
+            <Button x:Name="butRemoveAccount" Background="Red" DockPanel.Dock="Bottom" Margin="0, 10, 0, 0" Content="Remove" />
+            <Button x:Name="butEditAccount" DockPanel.Dock="Bottom" Content="Edit" />
+            <ListBox x:Name="lbAccounts" ItemsSource="{Binding Accounts}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Id}" />
+                            <TextBlock Text=" - " />
+                            <TextBlock Text="{Binding OwnerName}" />
+                            <TextBlock Text=" - " />
+                            <TextBlock Text="{Binding Money, StringFormat=C}" FontStyle="Italic" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+        <GridSplitter Width="3" Grid.Column="0" />
+        <DockPanel Grid.Column="1">
+            <Label DockPanel.Dock="Top" Content="Notes:" FontWeight="Bold" />
+            <Button x:Name="butAddNote" DockPanel.Dock="Top" Content="Add" />
+            <Button x:Name="butRemoveNote" Background="Red" DockPanel.Dock="Bottom" Margin="0, 10, 0, 0" Content="Remove" />
+            <ListBox x:Name="lbNotes" />
+        </DockPanel>
+    </Grid>
 </Window>
