@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EDP25.Bank.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="358.898" Width="289.195">
+    <DockPanel>
+        <Button x:Name="butAddAccount" DockPanel.Dock="Top" Content="Add" />
+        <Button x:Name="butRemoveAccount" DockPanel.Dock="Bottom" Content="Remove" />
+        <ListBox x:Name="lbAccounts" ItemsSource="{Binding Accounts}" />
+    </DockPanel>
 </Window>

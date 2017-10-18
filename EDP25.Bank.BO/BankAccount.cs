@@ -41,5 +41,10 @@ namespace EDP25.Bank.BO
                 Money -= money;
             }
         }
+
+        public override string ToString()
+        {
+            return OwnerName + " - " + Money.ToString("C");
+        }
     }
 }
