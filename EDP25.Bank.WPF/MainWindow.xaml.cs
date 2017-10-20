@@ -35,10 +35,27 @@ namespace EDP25.Bank.WPF
             butEditAccount.Click += ButEditAccount_Click;
             butRemoveAccount.Click += ButRemoveAccount_Click;
 
+            butAddNote.Click += ButAddNote_Click;
+            butRemoveNote.Click += ButRemoveNote_Click;
+
             butEditAccount.IsEnabled = butRemoveAccount.IsEnabled = false;
             lbAccounts.SelectionChanged += LbAccounts_SelectionChanged;
 
             Accounts = new ObservableCollection<BO.BankAccount>(DB.BankAccountGetAll());
+        }
+
+        private void ButRemoveNote_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void ButAddNote_Click(object sender, RoutedEventArgs e)
+        {
+            NoteAdd dlgNoteAdd = new NoteAdd();
+            if (dlgNoteAdd.ShowDialog() == true)
+            {
+
+            }
         }
 
         private void ButEditAccount_Click(object sender, RoutedEventArgs e)
