@@ -35,7 +35,16 @@
             <Label DockPanel.Dock="Top" Content="Notes:" FontWeight="Bold" />
             <Button x:Name="butAddNote" DockPanel.Dock="Top" Content="Add" />
             <Button x:Name="butRemoveNote" Background="Red" DockPanel.Dock="Bottom" Margin="0, 10, 0, 0" Content="Remove" />
-            <ListBox x:Name="lbNotes" />
+            <ListBox x:Name="lbNotes" ItemsSource="{Binding Notes}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding Note}" />
+                            <TextBlock FontWeight="Bold" Text="{Binding CreatedOn}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </DockPanel>
     </Grid>
 </Window>

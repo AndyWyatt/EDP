@@ -22,6 +22,7 @@ namespace EDP25.Bank.WPF
     public partial class MainWindow : Window
     {
         public ObservableCollection<BO.BankAccount> Accounts { get; set; }
+        public ObservableCollection<BO.BankAccountNote> Notes { get; set; }
 
         public static DataLayer.Repository DB { get; set; } = new DataLayer.Repository();
 
@@ -42,11 +43,21 @@ namespace EDP25.Bank.WPF
             lbAccounts.SelectionChanged += LbAccounts_SelectionChanged;
 
             Accounts = new ObservableCollection<BO.BankAccount>(DB.BankAccountGetAll());
+            Notes = new ObservableCollection<BO.BankAccountNote>();
         }
 
         private void ButRemoveNote_Click(object sender, RoutedEventArgs e)
         {
-            
+            BO.BankAccountNote note = lbNotes.SelectedItem as BO.BankAccountNote;
+            BO.BankAccount account = lbAccounts.SelectedItem as BO.BankAccount;
+
+            if (note != null && account != null)
+            {
+                Notes.Remove(note);
+                account.Notes.Remove(note);
+                DB.BankAccountNoteDelete(note);
+                DB.SaveChanges();
+            }
         }
 
         private void ButAddNote_Click(object sender, RoutedEventArgs e)
@@ -58,6 +69,7 @@ namespace EDP25.Bank.WPF
                     lbAccounts.SelectedItem as BO.BankAccount,
                     dlgNoteAdd.Note);
                 DB.SaveChanges();
+                Notes.Add(note);
             }
         }
 
@@ -73,6 +85,9 @@ namespace EDP25.Bank.WPF
         private void LbAccounts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             butEditAccount.IsEnabled = butRemoveAccount.IsEnabled = lbAccounts.SelectedItem != null;
+            Notes = new ObservableCollection<BO.BankAccountNote>(
+                (lbAccounts.SelectedItem as BO.BankAccount).Notes);
+            lbNotes.ItemsSource = Notes;
         }
 
         private void ButRemoveAccount_Click(object sender, RoutedEventArgs e)

@@ -29,7 +29,19 @@ namespace EDP25.Bank.DataLayer
         public void BankAccountDelete(BO.BankAccount bankAccount)
         {
             db.Accounts.Remove(bankAccount);
-        } 
+        }
+        #endregion
+
+        #region BankAccountNotes
+        public BO.BankAccountNote BankAccountNoteGet(int id)
+        {
+            return db.Notes.FirstOrDefault(n => n.Id == id);
+        }
+
+        public void BankAccountNoteDelete(BO.BankAccountNote note)
+        {
+            db.Notes.Remove(note);
+        }
         #endregion
 
         public void SaveChanges()
