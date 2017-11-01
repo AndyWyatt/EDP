@@ -39,11 +39,17 @@ namespace EDP25.Bank.WPF
             butAddNote.Click += ButAddNote_Click;
             butRemoveNote.Click += ButRemoveNote_Click;
 
-            butEditAccount.IsEnabled = butRemoveAccount.IsEnabled = false;
+            butRemoveNote.IsEnabled = butAddNote.IsEnabled = butEditAccount.IsEnabled = butRemoveAccount.IsEnabled = false;
             lbAccounts.SelectionChanged += LbAccounts_SelectionChanged;
+            lbNotes.SelectionChanged += LbNotes_SelectionChanged;
 
             Accounts = new ObservableCollection<BO.BankAccount>(DB.BankAccountGetAll());
             Notes = new ObservableCollection<BO.BankAccountNote>();
+        }
+
+        private void LbNotes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            butRemoveNote.IsEnabled = lbNotes.SelectedItem != null;
         }
 
         private void ButRemoveNote_Click(object sender, RoutedEventArgs e)
@@ -85,9 +91,12 @@ namespace EDP25.Bank.WPF
         private void LbAccounts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             butEditAccount.IsEnabled = butRemoveAccount.IsEnabled = lbAccounts.SelectedItem != null;
-            Notes = new ObservableCollection<BO.BankAccountNote>(
-                (lbAccounts.SelectedItem as BO.BankAccount).Notes);
+            BO.BankAccount account = lbAccounts.SelectedItem as BO.BankAccount;
+            Notes = account == null ? new ObservableCollection<BO.BankAccountNote>() : new ObservableCollection<BO.BankAccountNote>(account.Notes);
             lbNotes.ItemsSource = Notes;
+
+            butAddNote.IsEnabled = account != null;
+            butRemoveNote.IsEnabled = false;
         }
 
         private void ButRemoveAccount_Click(object sender, RoutedEventArgs e)
