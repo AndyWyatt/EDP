@@ -19,6 +19,8 @@ namespace EDP25.Bank.WPF
     /// </summary>
     public partial class NoteAdd : Window
     {
+        public string Note { get; set; }
+
         public NoteAdd()
         {
             InitializeComponent();
@@ -26,7 +28,9 @@ namespace EDP25.Bank.WPF
             butCancel.Click += ButCancel_Click;
             butOk.Click += ButOk_Click;
 
-            txtOwnerName.Focus();
+            DataContext = this;
+
+            txtNote.Focus();
         }
 
         private void ButOk_Click(object sender, RoutedEventArgs e)

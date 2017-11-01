@@ -54,7 +54,10 @@ namespace EDP25.Bank.WPF
             NoteAdd dlgNoteAdd = new NoteAdd();
             if (dlgNoteAdd.ShowDialog() == true)
             {
-
+                BO.BankAccountNote note = new BO.BankAccountNote(
+                    lbAccounts.SelectedItem as BO.BankAccount,
+                    dlgNoteAdd.Note);
+                DB.SaveChanges();
             }
         }
 

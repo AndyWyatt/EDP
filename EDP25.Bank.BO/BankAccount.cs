@@ -15,9 +15,11 @@ namespace EDP25.Bank.BO
 
         public bool HasOverdraft { get; set; }
 
+        public virtual List<BankAccountNote> Notes { get; protected set; }
+
         protected BankAccount()
         {
-
+            Notes = new List<BankAccountNote>();
         }
 
         public BankAccount(string ownerName, decimal money)
